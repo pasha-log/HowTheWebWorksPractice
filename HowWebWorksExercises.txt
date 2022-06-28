@@ -1,0 +1,34 @@
+How Web Works Exercise
+
+Part One: Solidify Terminology
+In your own terms, define the following terms:
+
+What is HTTP?
+It stands for Hypertext Transfer Protocol. It is how browsers and the web communicate.
+What is a URL?
+It stands for Uniform Resource Locators. It is a identifier to a web resource that explains its location on a computer network and a tool for getting it.
+What is DNS?
+Stands for Domain Name System. It is like a phonebook. Takes a hostname and finds the corresponding IP address.
+It is a system that identifies computers reachable through the Internet.
+What is a query string?
+Query string gives "extra info" - search terms, info from forms, etc. The query string allows you to pass key-value pairs into the URL, in the format ?key1=value1&key2=value2...
+What are two HTTP verbs and how are they different?
+GET and POST. GET: requests without changing server data. Usually, arguments are passed along in query string. If someone knows the arguments, they can change the URL.
+Entering-URL-in-browser, clicking links, and some form submissions. POST: requests with changes to data on server. Usually, arguments sent as body of the request (not in query string).
+Some form submissions (but never entering-URL-in-browser or links)
+Always do this if there’s a side-effect: sending mail, charge credit card, etc. “Are you sure you want to resubmit?”
+What is an HTTP request?
+It has the aim to access a resource on a server.
+What is an HTTP response?
+It is what the server gives to a client. It is either the resource the client requested, a notification that the request has been carried out, or an all out error notification.
+What is an HTTP header? Give a couple examples of request and response headers you have seen.
+Additional context or metadata about a request or response. 
+Request headers: Host, User-Agent, Accept, Cookie, Cache-Control
+Response headers: Content-Type, Last-Modified, Set-Cookie, Cache-Control
+What are the processes that happen when you type “http://somesite.com/some/page.html” into a browser?
+1. Your browser “resolves” the name into an IP address using DNS
+2. Your browser makes a request to that IP address, including headers (info about browser, any previous cookies, and other things)
+3. The server sends a response (typically, HTML, with a status code (200 if it was sucessful)
+4. The browser makes a DOM from that HTML, and finds any other resources needed (images, CSS, JavaScript, etc)
+5. The browser makes separate HTTP requests for those resources and receives response from the server for each
+

@@ -1,0 +1,84 @@
+// Intro to the WEB
+// API - Application Programming Interface
+// What happens when we visit some URL in browser?
+// Explain what IP and DNS are.
+// Describe different parts of URL.
+// Describe request/response cycle.
+// Compare GET vs POST requests.
+
+// To actualy understand what happens when type in a url into a browser is actually very very complicated.
+// Common interview question for software engineers.
+
+// Networks Internet WorldWideWeb
+
+// Network is set of computers that can intercommunicate.
+// Internet is just a really big network. Made up of smaller 'local' networks.
+// Total number of servers is close to 75 million as of today. Servers are what we can ask information from.
+// 550,000 miles of underwater cables. Satellite and wifi internet. Billions of computers.
+// File sharing, email, skype don't have to do with HTTP, HTML, websites. They are part of the WWW.
+// WWW is separate from the Internet. It is the websites and URLs. Viewing documents, youtube, wikipedia pages.
+// The WWW is one information system part of the bigger Internet. 
+
+// IP Addresses
+// Unique address of a computer.
+// Routers connect one machine to another machine. 
+// "Internet Protocal" address has four numbers (0-255) connected by dots.
+// Ther IPv4 addresses and nowadays there are IPv6 address which allow far more combinations.
+
+// DNS
+
+// As humans we use human-readable names for machines. We talk to servers by 'hostname' -
+// site.com or computer-a.site.com. That's just a nickname for the server, though - and the
+// same server can have many hostnames. 
+// Domain Name System is like a phonebook. Takes a hostname and finds the corresponding IP address.
+// It is a system that identifies computers reachable through the Internet.
+
+// Say you want to talk to a site.com, first locally on your computer cache (local host file) where
+// your corresponding hostname and IP address is stored. If it's not there, look on the router, your Internet service
+// providers, or DNS servers. Otherwise, the hostname is either nonexistant or something is up.
+
+// Local host IP address is unique to the computer you're working on.
+// 127.0.0.1 In addition to their IP on the network, all computers can reach themselves at this address.
+// The name local host always maps to 127.0.0.1.
+
+// Universal Resource Locators
+// HTTP - Hypertext Transfer Protocol (standard web/how browsers and servers communicate)
+// HTTPS - HTTP Secure (How browsers and servers communicate with encryption)
+// FTP - File transfer protocol (an old protocol for sending files over Internet)
+// There are many others but these are the main ones.
+// Protocol - Hostname - Port - Resource -      Query
+// http       site.com   80     /some/page.html ?x=1
+// Every server has 65535 unique "ports" you can talk to.
+// - For some servers, may just have them read an actual file on disk:
+// /some/page.html
+// For many servers, "dynamically generates" a page.
+// Query String - provides "extra info" - search terms, info from forms, etc
+// - Server is provided this info; might use to change page
+// - Sometimes, JS will use this info in addition/instead
+// Multiple arguments are separated by &: ?x=1&y=2 
+// - Argument can be given several times: ?x=1&x=2
+// So, http://site.com/some/page.html?x=1 means 
+// - Turn "site.com" into 123.45.67.89
+// - Connect to 123.45.67.89
+// - On port 80 (the default)
+// - Using the HTTP protocol
+// - Ask for /some/page.html
+// - Pass along query string: x=1
+// Server just brings functionality to another device. There's a lot of different types.
+// HTTP just sets rules for how a browser communicates with a web server.
+// What's in a Request?
+// Method (ex: GET)
+// HTTP protocol version (almost always 1.1)
+// Resource URL you want
+// Headers 
+// - Hostnames you're asking about
+// - Date your browser thinks it is
+// - Language your browser wants information in 
+// - Any  cookies that server has sent 
+// - And more.
+// Reponse Codes
+// 200 - OK, 301 - What you requested is elsewhere, 404 - Not Found, 500 - Server had an internal problem.
+// There are more but these are the most important ones. 
+
+// Serving over HTTP - you can start a simple, local HTTP server with Python:
+// $ python -m http.server
